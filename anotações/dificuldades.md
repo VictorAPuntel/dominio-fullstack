@@ -9,3 +9,5 @@ Repara na lógica:
 Sempre tratamos erros/fora do intervalo primeiro.
 Depois vamos descendo da maior faixa até a menor, porque isso evita sobreposição.
 Quer que eu te monte um mapa visual das condições (tipo fluxograma simplificado) pra te ajudar a não se perder nessas faixas de valores
+
+do while está sendo uma dor de cabeça, preciso praticar mais
