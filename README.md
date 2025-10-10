@@ -1,27 +1,27 @@
-# Domínio Fullstack 🚀
+# Fullstack Mastery 🚀
 
-Este repositório é meu campo de treinamento para me tornar um desenvolvedor Full Stack completo.
+This repository is my personal training ground to become a complete Full Stack Developer.
 
-📌 **Objetivo:** dominar com profundidade cada etapa da stack — do raciocínio lógico até o deploy de aplicações reais.
+📌 **Goal:** master every layer of the stack — from logical reasoning to real-world application deployment.
 
-## Estrutura
+## Structure
 
-- `logica/`: exercícios diários de lógica de programação
-- `desafios/`: desafios técnicos e mini-projetos
-- `simulados/`: simulações de entrevistas e testes práticos
-- `anotacoes/`: resumos e anotações úteis durante os estudos
-- `progresso.md`: meu registro de evolução
+- `logic/`: daily programming logic exercises
+- `challenges/`: technical challenges and mini-projects
+- `mock-tests/`: interview and practical test simulations
+- `progress.md`: my evolution tracker
 
-## Rotina
+## Routine
 
-🕒 Estudo diário de 3h, dividindo entre:
+🕒 Daily study time: **3 hours**, split between:
 
-- Curso Full Stack (Rocketseat)
-- Treino de lógica
-- Revisões e desafios
+- Full Stack Course (Rocketseat)
+- Logic training
+- Reviews and challenges
 
-💡 Tudo aqui é feito com propósito: fortalecer raciocínio, ganhar confiança técnica e estar preparado para qualquer desafio de vaga.
+💡 Everything here is done with purpose — to strengthen reasoning, build technical confidence, and be fully prepared for any job challenge.
 
 ---
 
-> Mantido com disciplina brutal. Porque dominar Fullstack não é sonho — é plano.
+> Maintained with brutal discipline.  
+> Because mastering Fullstack isn’t a dream — it’s a plan.
