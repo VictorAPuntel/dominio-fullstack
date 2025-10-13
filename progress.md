@@ -21,25 +21,26 @@
 
 ## Arrays
 
-| Day | Topic                                | Status      | Notes                                                                                                                                               |
-| --- | ------------------------------------ | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 04  | Array fundamentals (`ex031`–`ex040`) | ✅ Complete | Learned array creation, indexing, and iteration. Practiced sum, average, search, and comparison logic. Applied earlier loop patterns independently. |
+| Day | Topic                                             | Status      | Notes                                                                                                                                               |
+| --- | ------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 04  | Array fundamentals (`ex031`–`ex040`)              | ✅ Complete | Learned array creation, indexing, and iteration. Practiced sum, average, search, and comparison logic. Applied earlier loop patterns independently. |
+| 05  | Array methods & transformations (`ex041`–`ex050`) | ✅ Complete | Practiced .map(), .filter(), .reduce(), and .includes(); learned how to chain methods and apply logical filters effectively.                        |
 
 ---
 
-## 🧩 Highlights from Day 04 (ex031–ex040)
+## 🧩 Highlights from Day 06 (ex040–ex050)
 
-- Understood how to access **first**, **last**, and **specific elements** using `numbers[0]` and `numbers[length – 1]`
-- Practiced **sum**, **average**, **min/max**, and **reverse iteration** patterns
-- Learned to control array traversal and avoid off-by-one errors
-- Demonstrated **logical reuse** — adapted prior “max value” logic to find “min value” with proper reasoning
-- Fixed subtle mistakes (case sensitivity, misplaced conditions, redundant loops) and improved attention to detail
+- Understood how to **search values** and count occurrences using loops and `.filter()`
+- Practiced **transformations** (`.map()`) and aggregations (`.reduce()`)
+- Combined multiple methods into pipelines (map → filter → reduce)
+- Introduced array manipulation with **strings** (names) and **case transformation**
+- Improved debugging and reasoning (e.g., `%` vs `/`, `.join()` formatting)
 
 ---
 
 ## 🧠 Next Steps
 
-- Practice **array search and filtering** (`includes`, `find`, `filter`)
-- Introduce **array transformations** (`map`, `reduce`)
-- Move on to **nested arrays** and **matrix exercises**
-- Explore how loops + arrays combine for **real problem-solving scenarios** (like statistics or small simulations)
+- Reinforce method chaining with mixed operations (e.g., `.map().filter().reduce()`)
+- Practice **string and array hybrid exercises** (e.g., splitting phrases, counting letters)
+- Start exploring **objects and key-value logic** after mastering array transformations
+- Small challenge: build a **mini statistics program** (average, max, min, count, and filters)
