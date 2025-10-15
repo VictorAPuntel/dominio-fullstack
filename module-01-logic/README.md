@@ -4,9 +4,8 @@ This module focuses on building a solid foundation in **JavaScript logic and pro
 
 ## 📂 Structure
 
-- **fundamentos/** → basic concepts (variables, input/output, operators)
-- **condicionais/** → decision structures (`if`, `else if`, `switch`)
-- **anotações/** → personal notes and study summaries
+- **fundaments/** → basic concepts (variables, input/output, operators)
+- **conditionals/** → decision structures (`if`, `else if`, `switch`)
 
 ## ▶️ How to Run
 
