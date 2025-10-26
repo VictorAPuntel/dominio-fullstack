@@ -28,22 +28,30 @@
 | 06  | Array methods & transformations (`ex041`–`ex050`) | ✅ Complete | Practiced `.map()`, `.filter()`, `.reduce()`, and `.includes()`; learned how to chain methods and apply logical filters effectively.                   |
 | 07  | Array methods & transformations (`ex051`–`ex060`) | ✅ Complete | Worked with `.split()`, `.join()`, `.replaceAll()`, `.match()` (regex), and word analysis using `.map()` and `.filter()` effectively.                  |
 | 09  | Array methods review (`ex061`–`ex070`)            | ✅ Complete | Consolidated `.map()`, `.filter()`, `.reduce()`, `.find()`, `.some()`, `.every()`. Compared readability, chaining, and practical data transformations. |
+| 10  | Advanced arrays (`ex071`–`ex080`)                 | ✅ Complete | Practiced nested arrays, bidimensional structures, and data merging between arrays and sub-arrays. Prepared transition to object-based logic.          |
 
 ---
 
-## 🧩 Highlights from Day 09 (ex061–ex070)
+## Objects
 
-- Reinforced **array methods** with focus on transformation and chaining
-- Practiced combining `.map()`, `.filter()`, and `.reduce()` for data processing
-- Compared **syntax clarity and readability** between traditional loops and functional approaches
-- Strengthened understanding of **iteration and functional programming patterns**
-- Ready to start **Day 10 – Integration: Arrays ↔ Objects** and the _Text Analyzer_ mini project
+| Day | Topic                                        | Status      | Notes                                                                                                                                                |
+| --- | -------------------------------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 11  | Object manipulation basics (`ex081`–`ex089`) | ✅ Complete | Practiced object creation, key/value iteration, destructuring, and nested access. Strengthened understanding of data modeling and structure nesting. |
+
+---
+
+## 🧩 Highlights from Day 11 (ex081 – ex089)
+
+- Mastered **object manipulation** and combined arrays ↔ objects logic
+- Gained fluency in **iterating nested data** and extracting key insights
+- Reinforced the relationship between **functional array methods** and object patterns
+- Set the foundation for **real-world JSON handling** and data transformation tasks
 
 ---
 
 ## 🧠 Next Steps
 
-- Start **Day 10 – Integration: Arrays ↔ Objects**
-- Practice converting between arrays and objects (`Object.entries`, `Object.keys`, `reduce`)
-- Build the **Text Analyzer** mini project (count words, characters, and frequencies)
-- Conclude the _Arrays, Loops & Objects — Deep Dive_ block before continuing from `ex063+`
+- Start **Day 12 – Integration: Arrays ↔ Objects**
+- Practice conversions with `Object.keys`, `Object.values`, and `Object.entries`
+- Build the **Text Analyzer** mini-project (count words, characters, and frequencies)
+- Begin planning the next block: **Functions & Modularization**
