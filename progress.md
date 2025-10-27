@@ -34,24 +34,26 @@
 
 ## Objects
 
-| Day | Topic                                        | Status      | Notes                                                                                                                                                |
-| --- | -------------------------------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 11  | Object manipulation basics (`ex081`–`ex089`) | ✅ Complete | Practiced object creation, key/value iteration, destructuring, and nested access. Strengthened understanding of data modeling and structure nesting. |
+| Day | Topic                                             | Status      | Notes                                                                                                                                        |
+| --- | ------------------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| 11  | Object manipulation basics (`ex081`–`ex089`)      | ✅ Complete | Practiced object creation, key/value iteration, destructuring, and nested access. Strengthened understanding of data modeling and structure. |
+| 12  | Object manipulation & iteration (`ex090`–`ex095`) | ✅ Complete | Worked on updating, adding, and deleting properties, looping through objects, and transforming arrays of objects.                            |
+| 13  | Combined methods & grouping (`ex096`–`ex098`)     | ✅ Complete | Applied `filter()`, `map()`, and `reduce()` together; created ranking systems and grouped heroes by class.                                   |
+| 13  | Object conversion review (`ex086`)                | ✅ Complete | Revisited array-to-object conversion using `reduce()`, reinforcing key-value mapping logic.                                                  |
 
 ---
 
-## 🧩 Highlights from Day 11 (ex081 – ex089)
+## 🧩 Highlights from Day 13 (ex090 – ex098)
 
-- Mastered **object manipulation** and combined arrays ↔ objects logic
-- Gained fluency in **iterating nested data** and extracting key insights
-- Reinforced the relationship between **functional array methods** and object patterns
-- Set the foundation for **real-world JSON handling** and data transformation tasks
+- Mastered combining **filter, map, and reduce** for object transformations
+- Built a **ranking system**, practiced **data grouping**, and refined clean output formatting
+- Learned to handle **key-value conversions** dynamically with `reduce()`
+- Reinforced understanding of **data immutability** and clean iteration patterns
 
 ---
 
 ## 🧠 Next Steps
 
-- Start **Day 12 – Integration: Arrays ↔ Objects**
-- Practice conversions with `Object.keys`, `Object.values`, and `Object.entries`
-- Build the **Text Analyzer** mini-project (count words, characters, and frequencies)
-- Begin planning the next block: **Functions & Modularization**
+- Start **Day 14 – Integration Challenge (ex099)**
+- Implement a **Hero Database Manager (mini CRUD)** combining add, update, filter, and rank features
+- Then begin the **practical challenges block** to apply all learned concepts in real-world logic scenarios

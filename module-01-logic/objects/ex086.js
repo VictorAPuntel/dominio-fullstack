@@ -11,8 +11,12 @@ function convertArrayToObject() {
     { id: 3, name: 'Charlie', age: 22 },
   ]
 
-  const oneObject = {}
-  
+  const oneObject = people.reduce((acc, person) => {
+    acc[person.id] = person
+    return acc
+  }, {})
+
+  console.log(oneObject)
 }
 
 convertArrayToObject()
