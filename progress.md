@@ -41,19 +41,27 @@
 | 13  | Combined methods & grouping (`ex096`–`ex098`)     | ✅ Complete | Applied `filter()`, `map()`, and `reduce()` together; created ranking systems and grouped heroes by class.                                   |
 | 13  | Object conversion review (`ex086`)                | ✅ Complete | Revisited array-to-object conversion using `reduce()`, reinforcing key-value mapping logic.                                                  |
 
+## Integration & Advanced Object Logic
+
+| Day | Topic                                             | Status      | Notes                                                                                                                                  |
+| --- | ------------------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 14  | Integration challenge (`ex099`–`ex102`)           | ✅ Complete | Combined all previous array/object concepts into practical data manipulation. Practiced filtering, concatenation, and unique grouping. |
+| 15  | Object aggregation & comparison (`ex103`–`ex106`) | ✅ Complete | Practiced grouping by class, summing values, and comparing object properties using `reduce()`. Strengthened logic and consistency.     |
+
 ---
 
-## 🧩 Highlights from Day 13 (ex090 – ex098)
+## 🧩 Highlights from Day 15 (ex103 – ex106)
 
-- Mastered combining **filter, map, and reduce** for object transformations
-- Built a **ranking system**, practiced **data grouping**, and refined clean output formatting
-- Learned to handle **key-value conversions** dynamically with `reduce()`
-- Reinforced understanding of **data immutability** and clean iteration patterns
+- Reapplied `reduce()` in multiple contexts (arrays → objects)
+- Built logic for **sum, unique, and max** operations on dynamic data
+- Learned to use `Object.entries()` and `Object.fromEntries()` for key/value transformation
+- Strengthened reasoning for conditional updates within reducers
 
 ---
 
 ## 🧠 Next Steps
 
-- Start **Day 14 – Integration Challenge (ex099)**
-- Implement a **Hero Database Manager (mini CRUD)** combining add, update, filter, and rank features
-- Then begin the **practical challenges block** to apply all learned concepts in real-world logic scenarios
+- Day 16: **Visual Object Review Block**  
+  Reinforce `reduce()` with visual diagrams and iterative logging  
+  Understand accumulator mutation step-by-step
+- After review, continue to **ex107 – Average Level per Class**
