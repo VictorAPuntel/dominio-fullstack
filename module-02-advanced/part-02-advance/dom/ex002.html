@@ -1,0 +1,70 @@
+<!-- 
+ex002 - Create Elements Dynamically
+Goal: Add a new list item each time the user clicks the button
+Input: A click event on the "Add Task" button
+Process: When the user clicks, create a new <li> element and append it to the list
+Output: A growing list of items displayed on the page
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex002 - Create Elements Dynamically</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        background: #f0f0f0;
+        margin: 5px auto;
+        padding: 8px 12px;
+        width: 200px;
+        border-radius: 6px;
+      }
+
+      button {
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Task Generator</h1>
+    <button id="add">Add Task</button>
+    <ul id="list"></ul>
+
+    <script>
+      const button = document.getElementById('add')
+      const list = document.getElementById('list')
+      let count = 1
+
+      button.addEventListener('click', () => {
+        if (count <= 10) {
+          const li = document.createElement('li')
+          li.textContent = `TASK ${count}`
+          list.appendChild(li)
+          count++
+        } else {
+          alert('You have reached the maximum tasks')
+        }
+      })
+    </script>
+  </body>
+</html>
