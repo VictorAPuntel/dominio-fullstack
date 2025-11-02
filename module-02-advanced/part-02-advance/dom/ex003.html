@@ -1,0 +1,48 @@
+<!-- 
+ex003 - Input Events
+Goal: Display in real time what the user types in the input field
+Input: Text typed by the user
+Process: Listen for input events and update a paragraph with the current value
+Output: The paragraph shows exactly what the user is typing
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex003 - Input Events</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      input {
+        padding: 8px;
+        width: 220px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Playground</h1>
+    <input id="input" placeholder="Type something..." />
+    <p id="output"></p>
+
+    <script>
+      const typeBox = document.getElementById('input')
+      const typeShow = document.getElementById('output')
+
+      typeBox.addEventListener('input', () => {
+        typeShow.textContent = typeBox.value
+      })
+    </script>
+  </body>
+</html>
