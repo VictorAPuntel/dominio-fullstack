@@ -1,0 +1,56 @@
+<!-- 
+ex001 - DOM Introduction
+Goal: Change the text color and title when a button is clicked
+Input: A click event on a button
+Process: When the user clicks, toggle the paragraph color and update the title text
+Output: Updated text and color on the page
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex001 - DOM Introduction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      #text {
+        color: gray;
+        transition: color 0.3s ease;
+      }
+
+      button {
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">DOM Playground</h1>
+    <p id="text">Click the button below to change my color 👇</p>
+    <button id="btn">Change Color</button>
+
+    <script>
+      const title = document.getElementById('title')
+      const text = document.getElementById('text')
+      const button = document.getElementById('btn')
+
+      button.addEventListener('click', () => {
+        text.style.color = text.style.color === 'gray' ? 'blue' : 'gray'
+        title.textContent = 'DOM interacting with the user!'
+      })
+    </script>
+  </body>
+</html>
