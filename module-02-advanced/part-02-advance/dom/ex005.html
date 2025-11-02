@@ -1,0 +1,135 @@
+<!-- 
+ex005 - Dynamic List
+Goal: Add items to a list and allow removing individual items
+Input: Text typed by the user + click on "Add"
+Process: On click, create an <li> with the typed text and a remove button
+Output: A list that grows with new items and allows removing them
+
+Requirements:
+1) Ignore empty/whitespace-only inputs
+2) After adding, clear the input and keep focus on it
+3) Each <li> must include a small "Remove" button to delete itself
+
+Optional:
+- Add item on Enter key
+- Add a "Clear All" button to wipe the list
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex005 - Dynamic List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .controls {
+        display: inline-flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      input {
+        padding: 8px;
+        width: 220px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      button {
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 16px;
+        display: grid;
+        gap: 8px;
+        justify-items: center;
+      }
+
+      li {
+        width: 260px;
+        background: #f0f0f0;
+        padding: 8px 12px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .remove {
+        background: #dc3545;
+      }
+
+      .remove:hover {
+        background: #b02a37;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dynamic List</h1>
+
+    <div class="controls">
+      <input id="item" placeholder="Add new item..." />
+      <button id="add">Add</button>
+      <button id="clear">Clear All</button>
+    </div>
+
+    <ul id="list"></ul>
+
+    <script>
+      // TODO: Select the input, the "Add" button, and the list
+
+      // TODO: On "Add" click:
+      //  - Create a new <li> with the text
+      //  - Create a "Remove" button, attach a click listener to remove the <li>
+      //  - Append the <li> to the list
+      //  - Clear the input and focus it again
+
+      // Optional: Add item when pressing Enter on the input
+
+      // Optional: Implement "Clear All" button to wipe the list
+      const add = document.getElementById('add')
+      const input = document.getElementById('item')
+      const list = document.getElementById('list')
+
+      add.addEventListener('click', () => {
+        const text = input.value.trim()
+        if (!text) return
+
+        const li = document.createElement('li')
+        li.textContent = text
+
+        const remove = document.createElement('button')
+        remove.classList.add('remove')
+        remove.textContent = '❌'
+
+        remove.addEventListener('click', () => li.remove())
+
+        li.appendChild(remove)
+        list.appendChild(li)
+
+        input.value = ''
+        input.focus()
+      })
+      document.getElementById('clear').addEventListener('click', () => {
+        list.innerHTML = ''
+      })
+    </script>
+  </body>
+</html>
