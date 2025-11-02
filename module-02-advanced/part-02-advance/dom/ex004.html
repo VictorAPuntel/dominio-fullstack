@@ -1,0 +1,68 @@
+<!-- 
+ex004 - Counter App
+Goal: Create a simple counter with increase, decrease, and reset buttons
+Input: Click events on buttons
+Process: When a button is clicked, update the counter accordingly
+Output: The displayed number increases, decreases, or resets
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex004 - Counter App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      button {
+        margin: 5px;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Counter App</h1>
+    <h2 id="count">0</h2>
+    <button id="inc">+</button>
+    <button id="dec">-</button>
+    <button id="reset">Reset</button>
+
+    <script>
+      const counter = document.getElementById('count')
+      const increase = document.getElementById('inc')
+      const decrease = document.getElementById('dec')
+      const reset = document.getElementById('reset')
+      const count = 0
+
+      increase.addEventListener('click', () => {
+        count++
+        counter.textContent = count
+      })
+      decrease.addEventListener('click', () => {
+        count--
+        counter.textContent = count
+      })
+      reset.addEventListener('click', () => {
+        count = 0
+        counter.textContent = count
+      })
+    </script>
+  </body>
+</html>
