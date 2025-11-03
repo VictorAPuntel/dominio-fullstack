@@ -9,6 +9,14 @@
 
 ---
 
+## DOM & Browser
+
+| Day | Topic                        | Status      | Notes                                                                                      |
+| --- | ---------------------------- | ----------- | ------------------------------------------------------------------------------------------ |
+| 16  | DOM basics (`ex008`–`ex010`) | ✅ Complete | Practiced element selection, event handling, style changes, localStorage, and interactions |
+
+---
+
 ## Loops
 
 | Day | Topic                                            | Status      | Notes                                                                                                                                     |
@@ -41,6 +49,8 @@
 | 13  | Combined methods & grouping (`ex096`–`ex098`)     | ✅ Complete | Applied `filter()`, `map()`, and `reduce()` together; created ranking systems and grouped heroes by class.                                   |
 | 13  | Object conversion review (`ex086`)                | ✅ Complete | Revisited array-to-object conversion using `reduce()`, reinforcing key-value mapping logic.                                                  |
 
+---
+
 ## Integration & Advanced Object Logic
 
 | Day | Topic                                             | Status      | Notes                                                                                                                                  |
@@ -59,9 +69,17 @@
 
 ---
 
+## DOM & Browser
+
+| Day | Topic                              | Status      | Notes                                                                                                               |
+| --- | ---------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------- |
+| 16  | Local Storage basics (`ex008`)     | ✅ Complete | Practiced saving, retrieving, and clearing data using `localStorage.setItem()` and `getItem()`.                     |
+| 16  | DOM fundamentals (`ex009`)         | ✅ Complete | Manipulated DOM elements via `getElementById()` and `textContent`; changed text and color dynamically.              |
+| 16  | DOM events & interaction (`ex010`) | ✅ Complete | Learned to handle `mouseenter`, `mouseleave`, `click`, and toggle visibility; practiced dynamic style manipulation. |
+
+---
+
 ## 🧠 Next Steps
 
-- Day 16: **Visual Object Review Block**  
-  Reinforce `reduce()` with visual diagrams and iterative logging  
-  Understand accumulator mutation step-by-step
-- After review, continue to **ex107 – Average Level per Class**
+- Day 17: DOM + Forms (capturing input, validating, showing messages)
+- After that: small browser mini-projects (counter, todo, theme switcher)
