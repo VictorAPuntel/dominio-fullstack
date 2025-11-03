@@ -1,0 +1,105 @@
+<!-- 
+ex008 - Local Storage Basics
+Goal: Save and retrieve data using localStorage
+Input: Text typed by the user + click on "Save"
+Process:
+  1) When clicking "Save", store the text in localStorage
+  2) When reloading the page, retrieve and display the saved value
+Output: Persistent data even after page reload
+
+Requirements:
+1) Use localStorage.setItem() and localStorage.getItem()
+2) Clear the saved data when clicking "Clear"
+3) Show a message confirming the save or clear action
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex008 - Local Storage Basics</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+      }
+
+      input {
+        padding: 8px;
+        width: 240px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        margin: 4px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      p {
+        margin-top: 16px;
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Local Storage Demo</h1>
+    <input id="data" placeholder="Type something..." />
+    <div>
+      <button id="save">Save</button>
+      <button id="clear">Clear</button>
+    </div>
+    <p id="display"></p>
+
+    <script>
+      // TODO: Select elements
+
+      // TODO: On page load, check if there is saved data and display it
+
+      // TODO: On "Save" click:
+      //  - Get the value from the input
+      //  - Save it to localStorage with setItem()
+      //  - Update display text
+
+      // TODO: On "Clear" click:
+      //  - Remove item from localStorage with removeItem()
+      //  - Clear display text
+      const inputData = document.getElementById('data')
+      const save = document.getElementById('save')
+      const clear = document.getElementById('clear')
+      const display = document.getElementById('display')
+
+      const saved = localStorage.getItem('userData')
+      if (saved) {
+        display.textContent = saved
+        inputData.value = saved
+      }
+
+      save.addEventListener('click', () => {
+        const text = inputData.value.trim()
+        if (!text) return
+        localStorage.setItem('userData', text)
+        display.textContent = `Saved: ${text}`
+      })
+
+      clear.addEventListener('click', () => {
+        localStorage.removeItem('userData')
+        display.textContent = 'Cleared'
+        inputData.value = ''
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!-- 
+ex009 - DOM Fundamentals
+Goal: Practice DOM manipulation by changing text and color of elements
+Input: User clicks buttons
+Process:
+  1) "Change text" → modifies paragraph content
+  2) "Change color" → applies a random text color
+  3) "Reset" → restores the original text and color
+Output: Text and color change dynamically when buttons are clicked
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex009 - DOM Fundamentals</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 12px;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+
+      button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text">Click the buttons below to interact!</p>
+
+    <div>
+      <button id="btnText">Change text</button>
+      <button id="btnColor">Change color</button>
+      <button id="btnReset">Reset</button>
+    </div>
+
+    <script>
+      // TODO: add event listeners here
+      // btnText.addEventListener('click', () => {})
+      // btnColor.addEventListener('click', () => {})
+      // btnReset.addEventListener('click', () => {})
+
+      // TODO: create a randomColor() function
+      const paragraph = document.getElementById('text')
+      const btnText = document.getElementById('btnText')
+      const btnColor = document.getElementById('btnColor')
+      const btnReset = document.getElementById('btnReset')
+
+      const originalText = paragraph.textContent
+      const originalColor = paragraph.style.color
+
+      function randomColor() {
+        const r = Math.floor(Math.random() * 256)
+        const g = Math.floor(Math.random() * 256)
+        const b = Math.floor(Math.random() * 256)
+        return `rgb(${r}, ${g}, ${b})`
+      }
+      btnText.addEventListener('click', () => {
+        paragraph.textContent = 'The text has been changed!'
+      })
+
+      btnColor.addEventListener('click', () => {
+        paragraph.style.color = randomColor()
+      })
+
+      btnReset.addEventListener('click', () => {
+        paragraph.textContent = originalText
+        paragraph.style.color = originalColor
+      })
+    </script>
+  </body>
+</html>
