@@ -1,0 +1,82 @@
+<!-- 
+ex007 - Keyboard Events
+Goal: Detect key presses and display them on screen
+Input: Keyboard keys pressed by the user
+Process:
+  1) When the user presses a key, show its name and code
+  2) Change background color if Enter or Escape is pressed
+Output: Dynamic display of the key pressed
+
+Requirements:
+1) Use 'keydown' or 'keyup' event
+2) Show which key and keyCode were pressed
+3) If Enter is pressed, turn background green
+4) If Escape is pressed, turn background red
+5) Reset color on any other key
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex007 - Keyboard Events</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 80px;
+        transition: background 0.3s ease;
+      }
+
+      h1 {
+        margin-bottom: 24px;
+      }
+
+      .info {
+        font-size: 1.4rem;
+        background: #f0f0f0;
+        padding: 12px 20px;
+        display: inline-block;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Keyboard Event Tracker</h1>
+    <div class="info">
+      <p id="key">Press any key to start...</p>
+      <p id="code"></p>
+    </div>
+
+    <script>
+      // TODO: Select the 'key' and 'code' elements
+
+      // TODO: Add an event listener for 'keydown' or 'keyup'
+
+      // TODO: Inside the event:
+      //  - Display the key pressed and its keyCode
+      //  - If Enter -> set background green
+      //  - If Escape -> set background red
+      //  - Else -> reset background to white
+      const keyInput = document.getElementById('key')
+      const codeInput = document.getElementById('code')
+
+      document.addEventListener('keydown', (e) => {
+        const key = e.key
+        const code = e.code
+
+        keyInput.textContent = `Key: ${key}`
+        codeInput.textContent = `Code: ${code}`
+
+        if (key === 'Enter') {
+          document.body.style.background = '#22c55e'
+        } else if (key === 'Escape') {
+          document.body.style.background = '#ef4444'
+        } else {
+          document.body.style.background = 'white'
+        }
+      })
+    </script>
+  </body>
+</html>
