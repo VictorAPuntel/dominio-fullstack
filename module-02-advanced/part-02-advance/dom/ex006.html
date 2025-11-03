@@ -1,0 +1,136 @@
+<!-- 
+ex006 - Simple Form Validation
+Goal: Validate a form before submitting
+Input: Name and Email typed by the user, plus click on "Submit"
+Process:
+  1) When the user clicks "Submit", check if the fields are empty
+  2) If any field is empty, show an error message and do NOT submit
+  3) If everything is ok, show a success message
+Output: Visual feedback (error or success)
+
+Requirements:
+1) Ignore whitespace-only inputs (use .trim())
+2) Show error messages near the inputs or in a message box
+3) Prevent the default form submission
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex006 - Simple Form Validation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+      }
+
+      .card {
+        width: 320px;
+        background: #f8f8f8;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      label {
+        display: block;
+        text-align: left;
+        margin-bottom: 4px;
+        font-weight: 600;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        background: #007bff;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      button:hover {
+        background: #0056b3;
+      }
+
+      .message {
+        margin-top: 12px;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+
+      .error {
+        color: #b3261e;
+      }
+
+      .success {
+        color: #0f766e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Register</h1>
+      <form id="form">
+        <label for="name">Name</label>
+        <input id="name" placeholder="Enter your name" />
+
+        <label for="email">Email</label>
+        <input id="email" placeholder="Enter your email" />
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <p id="feedback" class="message"></p>
+    </div>
+
+    <script>
+      // TODO: Select the form, name input, email input and feedback element
+
+      // TODO: Add a "submit" event listener to the form
+
+      // TODO: Inside the event:
+      //  - prevent the default submission
+      //  - get the trimmed values
+      //  - if any is empty, show an error message
+      //  - else, show a success message and clear the inputs
+      const form = document.getElementById('form')
+      const inputName = document.getElementById('name')
+      const inputEmail = document.getElementById('email')
+      const feedbackMessage = document.getElementById('feedback')
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const nameValid = inputName.value.trim()
+        const emailValid = inputEmail.value.trim()
+
+        if (nameValid === '' || emailValid === '') {
+          feedbackMessage.textContent = 'Please fill in all fields correctly.'
+          feedbackMessage.className = 'message error'
+        } else {
+          feedbackMessage.textContent = 'Form submitted successfully!'
+          feedbackMessage.className = 'message success'
+          inputName.value = ''
+          inputEmail.value = ''
+        }
+      })
+    </script>
+  </body>
+</html>
