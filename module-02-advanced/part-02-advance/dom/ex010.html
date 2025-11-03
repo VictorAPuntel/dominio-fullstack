@@ -1,0 +1,90 @@
+<!-- 
+ex010 - DOM Events & Interaction
+Goal: Practice DOM events by reacting to user actions
+Input: User clicks or hovers on elements
+Process:
+  1) Create a box or element that changes style on hover
+  2) Add a button that toggles the box visibility
+  3) Show a message when the box is clicked
+Output: Interactive element reacting to user events
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex010 - DOM Events & Interaction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 12px;
+      }
+
+      #box {
+        width: 150px;
+        height: 150px;
+        background-color: lightblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+
+      button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">Hover me</div>
+    <button id="toggleBtn">Toggle Box</button>
+
+    <script>
+      // TODO: add event listeners for hover, click and toggle actions
+      // box.addEventListener('mouseenter', () => {})
+      // box.addEventListener('mouseleave', () => {})
+      // box.addEventListener('click', () => {})
+      // toggleBtn.addEventListener('click', () => {})
+      function randomColor() {
+        const r = Math.floor(Math.random() * 256)
+        const g = Math.floor(Math.random() * 256)
+        const b = Math.floor(Math.random() * 256)
+        return `rgb(${r}, ${g}, ${b})`
+      }
+
+      const box = document.getElementById('box')
+      const toggleBtn = document.getElementById('toggleBtn')
+      const boxOriginalText = box.textContent
+
+      box.addEventListener('mouseenter', () => {
+        box.style.backgroundColor = randomColor()
+        box.style.colorInterpolation = randomColor()
+      })
+
+      box.addEventListener('mouseleave', () => {
+        box.style.color = 'lightblue'
+      })
+
+      box.addEventListener('click', () => {
+        box.textContent = 'Changed!'
+      })
+
+      toggleBtn.addEventListener('click', () => {
+        if (box.style.display === 'none') {
+          box.style.display = 'flex'
+        } else {
+          box.style.display = 'none'
+        }
+      })
+    </script>
+  </body>
+</html>
