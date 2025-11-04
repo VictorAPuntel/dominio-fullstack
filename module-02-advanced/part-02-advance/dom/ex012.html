@@ -1,0 +1,112 @@
+<!-- 
+ex012 - Dynamic List Builder
+Goal: Practice creating and removing elements in the DOM
+Input: User types an item name and clicks "Add"
+Process:
+  1) Read the input value
+  2) Create a new <li> and append to a <ul>
+  3) Add a small "remove" button to each item
+  4) When clicking remove, delete only that item
+Output: A dynamic list on the page
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex012 - Dynamic List Builder</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 12px;
+        background-color: #f9f9f9;
+      }
+
+      .wrapper {
+        background: #fff;
+        padding: 16px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        min-width: 280px;
+      }
+
+      input {
+        padding: 6px 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 160px;
+      }
+
+      button {
+        padding: 6px 12px;
+        cursor: pointer;
+        margin-left: 4px;
+      }
+
+      ul {
+        margin-top: 12px;
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #eef1f4;
+        padding: 6px 10px;
+        border-radius: 4px;
+        margin-bottom: 6px;
+      }
+
+      .remove-btn {
+        background: #ff6b6b;
+        border: none;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 2px 6px;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>ex012 - Dynamic List Builder</h2>
+
+    <div class="wrapper">
+      <input type="text" id="itemInput" placeholder="New item..." />
+      <button id="addBtn">Add</button>
+
+      <ul id="itemList"></ul>
+    </div>
+
+    <script>
+      const input = document.getElementById('itemInput')
+      const button = document.getElementById('addBtn')
+      const list = document.getElementById('itemList')
+
+      button.addEventListener('click', () => {
+        const text = input.value.trim()
+        if (!text) return
+
+        const li = document.createElement('li')
+        li.textContent = text
+        const remove = document.createElement('button')
+        remove.classList.add('remove-btn')
+        remove.textContent = '❌'
+        remove.addEventListener('click', () => li.remove())
+
+        li.appendChild(remove)
+        list.appendChild(li)
+
+        input.value = ''
+        input.focus()
+      })
+    </script>
+  </body>
+</html>
