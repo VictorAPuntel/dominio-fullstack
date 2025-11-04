@@ -79,7 +79,19 @@
 
 ---
 
-## 🧠 Next Steps
+| Day | Topic                              | Status      | Notes                                                                                                    |
+| --- | ---------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------- |
+| 17  | Form handling & feedback (`ex011`) | ✅ Complete | Practiced real-time input feedback and form submission events; learned to validate and display messages. |
+| 17  | Dynamic list builder (`ex012`)     | ✅ Complete | Reinforced `createElement` and `appendChild` logic; built interactive lists with removable items.        |
+| 17  | Style switcher (`ex013`)           | ✅ Complete | Implemented light/dark mode switching using CSS variables and class toggling.                            |
+| 17  | Keyboard counter (`ex014`)         | ✅ Complete | Practiced keyboard event handling (`keydown`); controlled state and prevented default behaviors.         |
+| 17  | Modal window (`ex015`)             | ✅ Complete | Created a modal overlay using DOM manipulation and event listeners for open/close actions.               |
 
-- Day 17: DOM + Forms (capturing input, validating, showing messages)
-- After that: small browser mini-projects (counter, todo, theme switcher)
+---
+
+## 🧩 Highlights from Day 17 (ex011 – ex015)
+
+- Mastered user interaction through keyboard, mouse, and form inputs.
+- Practiced DOM creation, class manipulation, and styling via CSS variables.
+- Built a foundation for front-end interactivity (forms, modals, theming).
+- Ready to start **mini projects** integrating multiple DOM concepts together.
