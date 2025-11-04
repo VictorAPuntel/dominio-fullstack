@@ -1,0 +1,82 @@
+<!-- 
+ex014 - Keyboard Counter
+Goal: Control a counter on screen using keyboard events
+Input: User presses keyboard keys
+Process:
+  - ArrowUp: increase counter
+  - ArrowDown: decrease counter
+  - Space: reset to 0
+Output: Updated counter on screen
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex014 - Keyboard Counter</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+      }
+
+      .counter {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+
+      .hint {
+        font-size: 0.9rem;
+        color: #555;
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      .box {
+        background: #fff;
+        padding: 20px 28px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        min-width: 240px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>ex014 - Keyboard Counter</h2>
+
+    <div class="box">
+      <div id="counter" class="counter">0</div>
+      <p class="hint">
+        Press ↑ to increase<br />
+        Press ↓ to decrease<br />
+        Press Space to reset
+      </p>
+    </div>
+
+    <script>
+      const counterEl = document.getElementById('counter')
+      let value = 0
+      document.addEventListener('keydown', (e) => {
+        e.preventDefault()
+        const key = e.key
+
+        if (key === 'ArrowUp') {
+          value++
+        } else if (key === 'ArrowDown') {
+          value--
+        } else if (key === ' ') {
+          value = 0
+        }
+        counterEl.textContent = value
+      })
+    </script>
+  </body>
+</html>
