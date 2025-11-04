@@ -1,0 +1,90 @@
+<!-- 
+ex011 - Form Handling & Live Feedback
+Goal: Practice DOM events with form inputs and real-time updates
+Input: User types text into an input field
+Process:
+  1) Create an input and a submit button
+  2) Show typed text below in real time
+  3) On submit, display confirmation or error if empty
+Output: Live preview and feedback messages
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex011 - Form Handling & Live Feedback</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 12px;
+        background-color: #f3f3f3;
+      }
+
+      input {
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #aaa;
+        width: 200px;
+      }
+
+      button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+
+      p {
+        font-weight: bold;
+        min-height: 24px;
+      }
+
+      .error {
+        color: red;
+      }
+
+      .success {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>ex011 - Live Feedback Form</h2>
+    <form id="feedbackForm">
+      <input type="text" id="userInput" placeholder="Type something..." />
+      <button type="submit">Submit</button>
+    </form>
+
+    <p id="liveOutput"></p>
+    <p id="message"></p>
+
+    <script>
+      const form = document.getElementById('feedbackForm')
+      const input = document.getElementById('userInput')
+      const liveOutput = document.getElementById('liveOutput')
+      const message = document.getElementById('message')
+
+      input.addEventListener('input', () => {
+        liveOutput.textContent = input.value
+      })
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        if (input.value.trim() === '') {
+          message.textContent = 'Please type something before submitting'
+          message.className = 'error'
+        } else {
+          message.textContent = `Submitted: "${input.value}"`
+          message.className = 'success'
+          input.value = ''
+          liveOutput.textContent = ''
+        }
+      })
+    </script>
+  </body>
+</html>
