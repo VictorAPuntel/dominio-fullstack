@@ -1,0 +1,56 @@
+<!-- 
+ex017 - Dynamic Background Color
+Goal: Change the page background to a random color when clicking the button
+Input: A click event on the "Change Color" button
+Process: Generate a random RGB color and apply it to the body background
+Output: Page background color changes randomly with each click
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex017 - Dynamic Background Color</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+        transition: background-color 0.4s ease;
+      }
+
+      button {
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dynamic Background</h1>
+    <p>Click the button to change the background color 🎨</p>
+    <button id="color-btn">Change Color</button>
+
+    <script>
+      const button = document.getElementById('color-btn')
+
+      function randomColor() {
+        const r = Math.floor(Math.random() * 256)
+        const g = Math.floor(Math.random() * 256)
+        const b = Math.floor(Math.random() * 256)
+        return `rgb(${r}, ${g}, ${b})`
+      }
+
+      button.addEventListener('click', () => {
+        document.body.style.backgroundColor = randomColor()
+      })
+    </script>
+  </body>
+</html>
