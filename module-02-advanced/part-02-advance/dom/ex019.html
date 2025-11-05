@@ -1,0 +1,77 @@
+<!-- 
+ex019 - Keyboard Events Demo
+Goal: Demonstrate the difference between keydown, keyup, and input events
+Input: User typing inside the text field
+Process: Listen to each event type and log messages or values as they occur
+Output: Real-time feedback showing when each event fires and what value is captured
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex019 - Keyboard Events Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      input {
+        padding: 8px;
+        width: 240px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        outline: none;
+      }
+
+      .log {
+        margin-top: 16px;
+        text-align: left;
+        width: 340px;
+        margin-inline: auto;
+        background: #f7f7f7;
+        border-radius: 8px;
+        padding: 10px;
+        font-family: monospace;
+        font-size: 14px;
+        height: 200px;
+        overflow-y: auto;
+      }
+
+      .log p {
+        margin: 2px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Keyboard Events Demo</h1>
+    <input type="text" id="input" placeholder="Type here..." />
+    <div class="log" id="log"></div>
+
+    <script>
+      const input = document.getElementById('input')
+      const output = document.getElementById('log')
+
+      function logEvent(type, key, value) {
+        const p = document.createElement('p')
+        p.textContent = `${type}: key="${key}", value="${value}"`
+        output.appendChild(p)
+        output.scrollTop = output.scrollHeight
+      }
+
+      input.addEventListener('keydown', (e) => {
+        logEvent('keydown', e.key, input.value)
+      })
+
+      input.addEventListener('keyup', (e) => {
+        logEvent('keyup', e.key, input.value)
+      })
+
+      input.addEventListener('input', () => {
+        logEvent('input', '(input)', input.value)
+      })
+    </script>
+  </body>
+</html>
