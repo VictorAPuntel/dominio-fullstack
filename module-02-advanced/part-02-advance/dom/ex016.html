@@ -1,0 +1,57 @@
+<!-- 
+ex016 - Show/Hide Text
+Goal: Toggle the visibility of a paragraph when clicking a button
+Input: A click event on the "Show/Hide" button
+Process: Check if the paragraph is visible and hide or show it accordingly
+Output: The paragraph alternates between visible and hidden states
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex016 - Show/Hide Text</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      #message {
+        color: #333;
+        margin-bottom: 16px;
+        transition: opacity 0.3s ease;
+      }
+
+      button {
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Show/Hide Example</h1>
+    <p id="message">This is a hidden secret... or is it? 🤫</p>
+    <button id="toggle-btn">Hide</button>
+
+    <script>
+      const message = document.getElementById('message')
+      const button = document.getElementById('toggle-btn')
+
+      button.addEventListener('click', () => {
+        message.style.display =
+          message.style.display === 'none' ? 'block' : 'none'
+        button.textContent = message.style.display === 'none' ? 'Show' : 'Hide'
+      })
+    </script>
+  </body>
+</html>
