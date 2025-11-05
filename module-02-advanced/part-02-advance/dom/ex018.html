@@ -1,0 +1,56 @@
+<!-- 
+ex018 - Character Counter
+Goal: Display the number of characters typed in a text input in real time
+Input: User typing in the text field
+Process: Listen for the "input" event and update the counter with the input length
+Output: A live counter showing how many characters have been typed
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex018 - Character Counter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      input {
+        padding: 8px;
+        width: 240px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        outline: none;
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Character Counter</h1>
+    <input type="text" id="text-input" placeholder="Type something..." />
+    <p id="counter">Characters: 0</p>
+
+    <script>
+      const input = document.getElementById('text-input')
+      const output = document.getElementById('counter')
+
+      input.addEventListener('input', () => {
+        output.textContent = `Characters: ${input.value.length}`
+      })
+
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          input.value = ''
+          output.textContent = 'Characters: 0'
+        }
+      })
+    </script>
+  </body>
+</html>
