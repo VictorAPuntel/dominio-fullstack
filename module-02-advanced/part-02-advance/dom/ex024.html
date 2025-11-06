@@ -1,0 +1,75 @@
+<!-- 
+ex024 - Character Counter
+Goal: Show how many characters the user has typed and how many are left from a limit
+Input: Text typed inside a textarea
+Process:
+  1) On every input, count characters
+  2) Update "used" and "remaining"
+  3) If exceeded, show warning
+Output: Live character count + warning when limit is exceeded
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex024 - Character Counter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      textarea {
+        width: 320px;
+        height: 120px;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        resize: none;
+      }
+
+      .counter {
+        margin-top: 10px;
+      }
+
+      .warning {
+        color: #c0392b;
+        min-height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Character Counter</h1>
+
+    <textarea id="message" placeholder="Type your message..."></textarea>
+    <div class="counter">
+      <span id="used">0</span> / <span id="limit">100</span> characters
+    </div>
+    <div id="warning" class="warning"></div>
+
+    <script>
+      // Process:
+      // 1) On every input, count characters
+      // 2) Update "used" and "remaining"
+      // 3) If exceeded, show warning
+      const message = document.getElementById('message')
+      const used = document.getElementById('used')
+      const limit = document.getElementById('limit')
+      const warning = document.getElementById('warning')
+      const maxChars = Number(limit.textContent)
+
+      message.addEventListener('input', () => {
+        const length = message.value.length
+        used.textContent = length
+
+        if (length > maxChars) {
+          warning.textContent = 'Exceeded the maximum characters'
+        } else {
+          warning.textContent = ''
+        }
+      })
+    </script>
+  </body>
+</html>
