@@ -3,9 +3,106 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>My Page</title>
   </head>
   <body>
-    
+    <header>
+      <h1>⚔️ Victor Alexandre Anacleto Puntel ⚔️</h1>
+    </header>
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <img
+          src="assets/Victor_Puntel_Desenvolvedor_FrontEnd.jpg"
+          alt="My Photo"
+        />
+        <p>Hello, i am Victor Puntel</p>
+        <p>
+          I'm a web developer passionate about creating innovative solutions.
+        </p>
+      </section>
+      <section id="interests">
+        <h2>My interests</h2>
+        <article>
+          <h3>Series</h3>
+          <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Films</h3>
+          <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ol>
+        </article>
+      </section>
+      <section id="skills">
+        <h2>My Skilss</h2>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ul>
+      </section>
+      <section id="table">
+        <h2>Companies I've worked for</h2>
+        <table>
+          <tr class="table-top">
+            <td>Name</td>
+            <td>City</td>
+            <td>Time</td>
+          </tr>
+          <tr>
+            <td>Meta</td>
+            <td>São Franscisco, CA</td>
+            <td>2 anos</td>
+          </tr>
+          <tr>
+            <td>Microsfot</td>
+            <td>Seattle, WA</td>
+            <td>3 anos</td>
+          </tr>
+          <tr>
+            <td>Google</td>
+            <td>São Paulo, Brasil</td>
+            <td>6 meses</td>
+          </tr>
+        </table>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" />
+
+          <label for="email">Emai:</label>
+          <input type="email" name="email" id="email" />
+
+          <label for="subject">Subject:</label>
+          <select name="subject" id="subject">
+            <option>Doubt</option>
+            <option>Suggestion</option>
+            <option>Complaint</option>
+          </select>
+
+          <label for="message">Message:</label>
+          <textarea name="message" id="message" rows="6"></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>Connect with me:</p>
+      <nav>
+        <a href="">Instagram</a> - <a href="">LinkedIn</a> - <a href="">X</a> -
+        <p>All rights reserved</p>
+      </nav>
+    </footer>
   </body>
 </html>
