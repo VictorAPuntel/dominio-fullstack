@@ -1,0 +1,97 @@
+<!-- 
+ex025 - Simple Tabs
+Goal: Switch visible content when clicking on different tab buttons
+Input: Click on one of the tab buttons
+Process:
+  1) Hide all tab contents
+  2) Remove "active" state from all buttons
+  3) Show the clicked tab's content
+  4) Add "active" to the clicked button
+Output: Only the selected tab content is visible
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex025 - Simple Tabs</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .tab-btn {
+        padding: 8px 14px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #f5f5f5;
+        cursor: pointer;
+      }
+
+      .tab-btn.active {
+        background: #4f46e5;
+        color: #fff;
+        border-color: #4f46e5;
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Simple Tabs</h1>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tab1">Tab 1</button>
+      <button class="tab-btn" data-tab="tab2">Tab 2</button>
+      <button class="tab-btn" data-tab="tab3">Tab 3</button>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+      <p>This is the content of Tab 1.</p>
+    </div>
+    <div id="tab2" class="tab-content">
+      <p>Welcome to Tab 2 content.</p>
+    </div>
+    <div id="tab3" class="tab-content">
+      <p>And this is Tab 3 content.</p>
+    </div>
+
+    <script>
+      // Process:
+      // 1) Hide all tab contents
+      // 2) Remove "active" state from all buttons
+      // 3) Show the clicked tab's content
+      // 4) Add "active" to the clicked button
+      const tabButtons = document.querySelectorAll('.tab-btn')
+      const tabContents = document.querySelectorAll('.tab-content')
+
+      tabButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          tabButtons.forEach((b) => b.classList.remove('active'))
+          tabContents.forEach((c) => c.classList.remove('active'))
+
+          btn.classList.add('active')
+
+          const tabId = btn.dataset.tab
+          document.getElementById(tabId).classList.add('active')
+        })
+      })
+    </script>
+  </body>
+</html>
