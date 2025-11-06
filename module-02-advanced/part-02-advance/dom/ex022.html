@@ -1,0 +1,75 @@
+<!-- 
+ex022 - Removable List Items
+Goal: Allow the user to remove an item from the list by clicking on it
+Input: Click event on any <li> inside the list
+Process:
+  1) Listen for clicks on the <ul>
+  2) Identify which <li> was clicked
+  3) Remove that <li> from the DOM
+Output: The clicked item disappears from the list
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex022 - Removable List Items</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        width: 280px;
+        margin: 0 auto;
+      }
+
+      li {
+        background: #f5f5f5;
+        margin: 8px 0;
+        padding: 10px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+
+      li:hover {
+        background: #ffe6e6;
+      }
+
+      .info {
+        margin-bottom: 14px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Removable List Items</h1>
+    <p class="info">Click an item to remove it.</p>
+
+    <ul id="list">
+      <li>Buy milk</li>
+      <li>Study DOM</li>
+      <li>Watch JS class</li>
+      <li>Go to the gym</li>
+    </ul>
+
+    <script>
+      // Process:
+      // 1) Listen for clicks on the <ul>
+      // 2) Identify which <li> was clicked
+      // 3) Remove that <li> from the DOM
+      const todoList = document.getElementById('list')
+
+      todoList.addEventListener('click', (e) => {
+        if (e.target.tagName === 'LI') {
+          e.target.remove()
+        }
+      })
+    </script>
+  </body>
+</html>
