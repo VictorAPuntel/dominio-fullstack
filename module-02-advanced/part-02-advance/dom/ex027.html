@@ -1,0 +1,92 @@
+<!-- 
+ex027 - FAQ Accordion
+Goal: Expand or collapse an answer when clicking on its question
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex027 - FAQ Accordion</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 60px auto;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .faq-item {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        overflow: hidden;
+      }
+
+      .question {
+        background: #4f46e5;
+        color: #fff;
+        padding: 14px;
+        cursor: pointer;
+      }
+
+      .answer {
+        background: #f9f9f9;
+        color: #333;
+        padding: 12px;
+        display: none;
+      }
+
+      .answer.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>FAQ Accordion</h1>
+
+    <div class="faq-item">
+      <div class="question">What is JavaScript?</div>
+      <div class="answer">
+        JavaScript is a programming language used to make web pages interactive.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">What is the DOM?</div>
+      <div class="answer">
+        The DOM (Document Object Model) represents the structure of a web page
+        that can be accessed and manipulated via JavaScript.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">What is an Event Listener?</div>
+      <div class="answer">
+        It's a way to make JavaScript respond to user actions like clicks, key
+        presses, or mouse moves.
+      </div>
+    </div>
+
+    <script>
+      // 1) Select all question elements
+      // 2) Add click event to each
+      // 3) Toggle visibility of the corresponding answer
+      // 4) Optional: close others when one is opened
+      const faqItems = document.querySelectorAll('.faq-item')
+      const answers = document.querySelectorAll('.answer')
+
+      faqItems.forEach((item) => {
+        item.addEventListener('click', () => {
+          const answer = item.querySelector('.answer')
+          answers.forEach((a) => a.classList.remove('active'))
+          answer.classList.toggle('active')
+        })
+      })
+    </script>
+  </body>
+</html>
