@@ -1,0 +1,108 @@
+<!-- 
+ex026 - Image Gallery Switcher
+Goal: Change the displayed image when clicking next/previous buttons
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex026 - Image Gallery Switcher</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      img {
+        width: 320px;
+        height: 210px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid #ddd;
+      }
+
+      .controls {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 6px;
+        background: #4f46e5;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #3b34b6;
+      }
+
+      #indicator {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Image Gallery Switcher</h1>
+    <img id="gallery" src="" alt="Gallery image" />
+
+    <div class="controls">
+      <button id="prev">Previous</button>
+      <button id="next">Next</button>
+    </div>
+
+    <p id="indicator"></p>
+
+    <script>
+      // 1) Create an array of image URLs
+      // const images = ['...', '...', '...']
+
+      // 2) Keep track of current index
+      // let currentIndex = 0
+
+      // 3) Function to update image and indicator
+
+      // 4) Add click events to buttons
+      const galleryImg = document.getElementById('gallery')
+      const prev = document.getElementById('prev')
+      const next = document.getElementById('next')
+      const indicator = document.getElementById('indicator')
+      let index = 0
+
+      function updateGallery() {
+        galleryImg.src = arrayImg[index]
+        indicator.textContent = `Image ${index + 1} of ${arrayImg.length}`
+      }
+      const arrayImg = [
+        'assets/360_F_389675304_xgTi91JLKsSfvB6f9bEACcE7JLWBGN13.jpg',
+        'assets/download.jpeg',
+        'assets/images.jpeg',
+        'assets/Westdragn.png',
+      ]
+      updateGallery()
+      prev.addEventListener('click', () => {
+        index--
+        if (index < 0) {
+          index = arrayImg.length - 1
+        }
+        updateGallery()
+      })
+
+      next.addEventListener('click', () => {
+        index++
+        if (index >= arrayImg.length) {
+          index = 0
+        }
+        updateGallery()
+      })
+    </script>
+  </body>
+</html>
