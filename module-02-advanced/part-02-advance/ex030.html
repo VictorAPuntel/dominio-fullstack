@@ -1,0 +1,74 @@
+<!-- 
+ex030 - Show & Hide List
+Goal: Show or hide a list when clicking the button
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex030 - Show & Hide List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        display: none;
+      }
+
+      ul.active {
+        display: block;
+      }
+
+      li {
+        margin: 8px 0;
+        background: #eee;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 4px;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background-color: #4f46e5;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #3b34b6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Show & Hide List</h1>
+
+    <ul id="itemList">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+    </ul>
+
+    <button id="toggleBtn">Show/Hide List</button>
+
+    <script>
+      // 1) Select the button and the list
+      const button = document.getElementById('toggleBtn')
+      const list = document.getElementById('itemList')
+      // 2) Add an event listener to the button
+      button.addEventListener('click', () => {
+        // 3) Toggle between showing and hiding the list
+        list.classList.toggle('active')
+      })
+    </script>
+  </body>
+</html>

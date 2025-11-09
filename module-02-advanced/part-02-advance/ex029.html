@@ -1,0 +1,68 @@
+<!-- 
+ex029 - Toggle Theme (Persistent)
+Goal: Switch between light and dark themes and remember the choice using localStorage
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex029 - Persistent Toggle Theme</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+        background: #f5f5f5;
+        color: #222;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      body.dark {
+        background: #121212;
+        color: #f5f5f5;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        background: #4f46e5;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #3b34b6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Persistent Toggle Theme</h1>
+    <button id="toggleBtn">Toggle Theme</button>
+
+    <script>
+      const button = document.getElementById('toggleBtn')
+      const body = document.body
+
+      // 1) On load, check saved theme
+      const savedTheme = localStorage.getItem('theme')
+      if (savedTheme === 'dark') {
+        body.classList.add('dark')
+      }
+
+      // 2) On click, toggle and save
+      button.addEventListener('click', () => {
+        body.classList.toggle('dark')
+
+        // check current theme and save
+        if (body.classList.contains('dark')) {
+          localStorage.setItem('theme', 'dark')
+        } else {
+          localStorage.setItem('theme', 'light')
+        }
+      })
+    </script>
+  </body>
+</html>
