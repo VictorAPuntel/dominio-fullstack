@@ -1,0 +1,85 @@
+<!-- 
+ex032 - Interactive Counter
+Goal: Create a counter that increases, decreases, and resets using DOM manipulation
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex032 - Interactive Counter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        margin: 5px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        background-color: #4f46e5;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background: #3b34b6;
+      }
+
+      .reset {
+        background: #ef4444;
+      }
+
+      .reset:hover {
+        background: #b91c1c;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="counter">0</h1>
+    <div>
+      <button id="decreaseBtn">-</button>
+      <button id="resetBtn" class="reset">Reset</button>
+      <button id="increaseBtn">+</button>
+    </div>
+
+    <script>
+      // 1) Select counter display and buttons
+      // 2) Create a variable to store the counter value
+      // 3) Add event listeners for each button:
+      //    - Increase → +1
+      //    - Decrease → -1
+      //    - Reset → 0
+      // 4) Update the displayed value on each click
+      const count = document.getElementById('counter')
+      const decrease = document.getElementById('decreaseBtn')
+      const reset = document.getElementById('resetBtn')
+      const increase = document.getElementById('increaseBtn')
+      let counter = 0
+
+      decrease.addEventListener('click', () => {
+        counter--
+        count.textContent = counter
+      })
+
+      reset.addEventListener('click', () => {
+        counter = 0
+        count.textContent = counter
+      })
+
+      increase.addEventListener('click', () => {
+        counter++
+        count.textContent = counter
+      })
+    </script>
+  </body>
+</html>
