@@ -1,0 +1,57 @@
+<!-- 
+ex028.1 - Toggle Theme
+Goal: Switch between light and dark themes when clicking the button
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex028.1 - Toggle Theme</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+        background: #f5f5f5;
+        color: #222;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      body.dark {
+        background: #121212;
+        color: #f5f5f5;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        background: #4f46e5;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #3b34b6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Toggle Theme</h1>
+    <button id="toggleBtn">Toggle Theme</button>
+
+    <script>
+      // 1) Select the button
+      // 2) Add a click event listener
+      // 3) Toggle the "dark" class on body
+      const button = document.getElementById('toggleBtn')
+      const body = document.body
+
+      button.addEventListener('click', () => {
+        body.classList.toggle('dark')
+      })
+    </script>
+  </body>
+</html>
