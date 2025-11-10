@@ -1,0 +1,72 @@
+<!-- 
+ex034 - Live Calculator
+Goal: Create a mini calculator that updates the result in real-time when values or operation change
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex034 - Live Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      input,
+      select {
+        padding: 8px;
+        margin: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 80px;
+        text-align: center;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Live Calculator</h1>
+
+    <input type="number" id="num1" placeholder="0" />
+    <select id="operation">
+      <option value="+">+</option>
+      <option value="-">-</option>
+    </select>
+    <input type="number" id="num2" placeholder="0" />
+
+    <p id="result">Result: 0</p>
+
+    <script>
+      // 1) Select inputs, select element, and result display
+      const select = document.getElementById('operation')
+      const firstNumber = document.getElementById('num1')
+      const secondNumber = document.getElementById('num2')
+      const result = document.getElementById('result')
+      // 2) Create a function that performs the calculation
+      function updateResult() {
+        const selectValue = select.value
+        let num1 = Number(firstNumber.value)
+        let num2 = Number(secondNumber.value)
+        if (selectValue === '+') {
+          const sum = num1 + num2
+          result.textContent = `Result: ${sum}`
+        } else if (selectValue === '-') {
+          const min = num1 - num2
+          result.textContent = `Result: ${min}`
+        }
+      }
+      // 3) Add 'input' and 'change' event listeners to recalculate dynamically
+      firstNumber.addEventListener('input', updateResult)
+      secondNumber.addEventListener('input', updateResult)
+      select.addEventListener('change', updateResult)
+    </script>
+  </body>
+</html>
