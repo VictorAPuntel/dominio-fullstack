@@ -1,0 +1,89 @@
+<!-- 
+ex033 - Color Counter
+Goal: Create a counter that changes color based on its value
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex033 - Color Counter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        transition: color 0.3s ease;
+      }
+
+      button {
+        margin: 5px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        background-color: #4f46e5;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background: #3b34b6;
+      }
+
+      .reset {
+        background: #ef4444;
+      }
+
+      .reset:hover {
+        background: #b91c1c;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="counter">0</h1>
+    <div>
+      <button id="decreaseBtn">-</button>
+      <button id="resetBtn" class="reset">Reset</button>
+      <button id="increaseBtn">+</button>
+    </div>
+
+    <script>
+      function randomColor() {
+        const r = Math.floor(Math.random() * 256)
+        const g = Math.floor(Math.random() * 256)
+        const b = Math.floor(Math.random() * 256)
+        return `rgb(${r}, ${g}, ${b})`
+      }
+      // 1) Select counter display and buttons
+      const counter = document.getElementById('counter')
+      const decrease = document.getElementById('decreaseBtn')
+      const reset = document.getElementById('resetBtn')
+      const increase = document.getElementById('increaseBtn')
+      // 2) Store a counter variable (start at 0)
+      let count = 0
+      // 3) Add listeners for increase, decrease, reset
+      decrease.addEventListener('click', () => {
+        count--
+        counter.textContent = count
+        counter.style.color = randomColor()
+      })
+      reset.addEventListener('click', () => {
+        count = 0
+        counter.textContent = count
+        counter.style.color = randomColor()
+      })
+      increase.addEventListener('click', () => {
+        count++
+        counter.textContent = count
+        counter.style.color = randomColor()
+      })
+      // 4) Update number and color each time the value changes
+    </script>
+  </body>
+</html>
