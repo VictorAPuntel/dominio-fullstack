@@ -1,0 +1,89 @@
+<!--
+ex035 - Character Counter
+Goal: Show, in real-time, how many characters the user has typed and warn when the limit is exceeded
+Input: User types in the textarea
+Process:
+  1) Listen to the 'input' event
+  2) Count current length
+  3) Update the counter element
+  4) If length > limit, add a 'warning' style
+Output: Counter updates live and warns when over the limit
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex035 - Character Counter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 500px;
+        margin: 50px auto;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        outline: none;
+        resize: vertical;
+      }
+
+      .counter {
+        margin-top: 8px;
+        font-size: 14px;
+      }
+
+      .counter strong {
+        font-weight: bold;
+      }
+
+      .counter.warning {
+        color: #d32f2f;
+      }
+
+      .helper {
+        margin-top: 4px;
+        font-size: 12px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Character Counter</h1>
+
+    <label for="message">Type your message:</label>
+    <textarea id="message" placeholder="Start typing..."></textarea>
+
+    <div id="counter" class="counter">Characters: <strong>0</strong> / 150</div>
+    <div id="helper" class="helper"></div>
+
+    <script>
+      const message = document.getElementById('message')
+      const counter = document.getElementById('counter')
+      const helper = document.getElementById('helper')
+      const limit = 150
+
+      message.addEventListener('input', () => {
+        const currentLength = message.value.length
+        counter.innerHTML = `Characters: <strong>${currentLength}</strong> / ${limit}`
+
+        if (currentLength > limit) {
+          counter.classList.add('warning')
+          helper.textContent = 'You have exceeded the character limit.'
+        } else {
+          counter.classList.remove('warning')
+          helper.textContent = ''
+        }
+      })
+    </script>
+  </body>
+</html>
