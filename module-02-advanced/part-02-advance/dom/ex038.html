@@ -1,0 +1,86 @@
+<!--
+ex038 - Text Analyzer
+Goal: Analyze the text typed by the user and display:
+  - Number of words
+  - Number of characters
+  - Number of lines
+Input: Text typed inside a textarea
+Process:
+  1) Listen to the 'input' event
+  2) Get the text from the textarea
+  3) Count words, characters, and lines
+  4) Update the UI dynamically with each input
+Output: Display live stats about the text
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex038 - Text Analyzer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      textarea {
+        width: 360px;
+        height: 160px;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        resize: none;
+      }
+
+      .results {
+        margin-top: 14px;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Text Analyzer</h1>
+
+    <textarea id="text" placeholder="Type something..."></textarea>
+
+    <div id="results" class="results">
+      Words: <strong>0</strong><br />
+      Characters: <strong>0</strong><br />
+      Lines: <strong>0</strong>
+    </div>
+
+    <script>
+      // 1) Select textarea and results elements
+      const textarea = document.getElementById('text')
+      const results = document.getElementById('results')
+      // 2) Create function to count words
+      function countWords(text) {
+        const trimmed = text.trim()
+        return trimmed === '' ? 0 : trimmed.split(/\s+/).length
+      }
+      // 3) Create function to count characters
+      function countChars(text) {
+        return text.length
+      }
+      // 4) Create function to count lines
+      function countLines(text) {
+        return text.split('\n').length
+      }
+      // 5) Create main function to update all values
+      function updateCounters() {
+        const text = textarea.value
+        const words = countWords(text)
+        const chars = countChars(text)
+        const lines = countLines(text)
+        results.innerHTML = `      Words: <strong>${words}</strong><br />
+      Characters: <strong>${chars}</strong><br />
+      Lines: <strong>${lines}</strong>`
+      }
+      // 6) Add event listener for 'input'
+      textarea.addEventListener('input', () => updateCounters())
+    </script>
+  </body>
+</html>
