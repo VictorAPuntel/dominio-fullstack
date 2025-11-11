@@ -1,0 +1,74 @@
+<!--
+ex037 - Word and Character Counter
+Goal: Display both the number of words and characters typed in real time
+Input: Text typed inside a textarea
+Process:
+  1) Listen to the 'input' event
+  2) Count words and characters
+  3) Ignore extra spaces for word count
+  4) Update both counters dynamically
+Output: Show live word and character count on screen
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex037 - Word and Character Counter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      textarea {
+        width: 340px;
+        height: 140px;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        resize: none;
+      }
+
+      .counter {
+        margin-top: 12px;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Word & Character Counter</h1>
+
+    <textarea id="text" placeholder="Start typing..."></textarea>
+
+    <div id="counter" class="counter">
+      Words: <strong>0</strong><br />
+      Characters: <strong>0</strong>
+    </div>
+
+    <script>
+      const textarea = document.getElementById('text')
+      const counter = document.getElementById('counter')
+
+      function countWords(text) {
+        const trimmed = text.trim()
+        return trimmed === '' ? 0 : trimmed.split(/\s+/).length
+      }
+
+      function countChars(text) {
+        return text.length
+      }
+
+      function updateCounters() {
+        const text = textarea.value
+        const words = countWords(text)
+        const chars = countChars(text)
+        counter.innerHTML = `Words: <strong>${words}</strong><br>Characters: <strong>${chars}</strong>`
+      }
+
+      textarea.addEventListener('input', updateCounters)
+    </script>
+  </body>
+</html>
