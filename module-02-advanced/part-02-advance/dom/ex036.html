@@ -1,0 +1,60 @@
+<!--
+ex036 - Live Word Counter
+Goal: Show in real time how many words the user has typed
+Input: Text typed inside a textarea
+Process:
+  1) Listen to the 'input' event
+  2) Split the text by spaces to count words
+  3) Ignore extra spaces
+  4) Update the counter dynamically
+Output: Display updates with the total number of words typed
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex036 - Live Word Counter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      textarea {
+        width: 320px;
+        height: 120px;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        resize: none;
+      }
+
+      .counter {
+        margin-top: 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Live Word Counter</h1>
+
+    <textarea id="text" placeholder="Start typing..."></textarea>
+    <div id="counter" class="counter">Words: <strong>0</strong></div>
+
+    <script>
+      const textarea = document.getElementById('text')
+      const counter = document.getElementById('counter')
+      function liveWordCounter(textarea, counter) {
+        const trimmed = textarea.value.trim()
+        const words = trimmed === '' ? 0 : trimmed.split(/\s+/)
+        counter.innerHTML = `Words: <strong>${words.length}</strong>`
+      }
+
+      textarea.addEventListener('input', () =>
+        liveWordCounter(textarea, counter)
+      )
+    </script>
+  </body>
+</html>
