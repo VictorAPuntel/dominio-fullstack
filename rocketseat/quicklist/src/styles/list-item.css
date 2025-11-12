@@ -10,6 +10,7 @@
     align-items: center;
     color: var(--secondary-content);
     font-size: var(--fs-paragraph);
+    margin-bottom: 1rem;
   }
   & .item-check {
     border-radius: 0.375rem;
