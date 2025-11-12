@@ -1,0 +1,29 @@
+#create-item {
+  & div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    & input {
+      width: 88%;
+      background-color: var(--always-white);
+      border: 1px solid var(--border-primary);
+      border-radius: 0.75rem;
+      padding: 0.875rem 16.3125rem 1.125rem 0.6875rem;
+    }
+
+    & button {
+      background-color: var(--brand-color);
+      color: var(--always-white);
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      border: none;
+      margin-left: 2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      &:hover {
+        background-color: var(--brand-hover-color);
+        transform: scale(1.03);
+      }
+    }
+  }
+}

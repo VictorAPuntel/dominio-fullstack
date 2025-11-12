@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="src/scripts/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Quicklist</title>
+    <link rel="shortcut icon" type="image/png" href="assets/img/image.png" />
+    <link rel="stylesheet" href="src/styles/index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <img src="assets/img/image.png" alt="Icon logo" />
+        quicklist
+      </h1>
+    </header>
+    <main>
+      <section id="main-header">
+        <a href="#" class="back-btn" aria-label="Return to previous page">
+          To go back</a
+        >
+        <h2>Shopping of the week</h2>
+      </section>
+      <section id="create-item">
+        <div>
+          <input
+            type="text"
+            placeholder="Add a new item"
+            id="itemText"
+            required
+          />
+          <button id="addItem">Add item</button>
+        </div>
+      </section>
+      <section id="list-item">
+        <!-- <ul>
+          <li class="item-space">
+            <input type="checkbox" class="item-check" />
+            Pão de forma
+            <button class="delete">
+              <img src="assets/img/icon delete.svg" alt="" />
+            </button>
+          </li>
+        </ul> -->
+      </section>
+      <section id="alert" role="alert" aria-live="assertive">
+        <div class="alert-content">
+          <img
+            src="assets/img/warning-circle-filled.svg"
+            alt="Warning Cicle"
+            class="alert-icon"
+          />
+          The item has been removed from the list
+          <img
+            src="assets/img/delete-small.svg"
+            alt="Close message"
+            class="close"
+          />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

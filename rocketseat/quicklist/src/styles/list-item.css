@@ -1,0 +1,28 @@
+#list-item {
+  margin-top: 2.5rem;
+  & .item-space {
+    width: 100%;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+    background-color: var(--always-white);
+    border: 1px solid var(--border-primary);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    color: var(--secondary-content);
+    font-size: var(--fs-paragraph);
+  }
+  & .item-check {
+    border-radius: 0.375rem;
+    background-color: var(--always-white);
+    border: 1px solid var(--border-primary);
+    margin-right: 0.75rem;
+    cursor: pointer;
+  }
+
+  & .delete {
+    background-color: var(--always-white);
+    border: none;
+    margin-left: auto;
+    cursor: pointer;
+  }
+}

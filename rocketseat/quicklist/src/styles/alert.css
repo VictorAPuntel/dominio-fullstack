@@ -1,0 +1,21 @@
+#alert {
+  background-color: var(--danger-color);
+  color: var(--always-white);
+  padding: 0.75rem 0.75rem 0.625rem 0.75rem;
+  margin-top: 2.3125rem;
+  border-radius: 0.75rem;
+  display: none;
+
+  & .alert-content {
+    display: flex;
+    align-items: center;
+  }
+
+  & .alert-icon {
+    margin-right: 0.5rem;
+  }
+
+  & .close {
+    margin-left: auto;
+  }
+}

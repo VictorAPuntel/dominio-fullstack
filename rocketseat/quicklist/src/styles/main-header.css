@@ -1,0 +1,16 @@
+#main-header {
+  & a {
+    color: var(--brand-color);
+    font-size: var(--fs-link);
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+  }
+
+  & h2 {
+    color: var(--primary-content);
+    font-size: var(--fs-title);
+    margin-top: 1rem;
+    margin-bottom: 2.75rem;
+  }
+}

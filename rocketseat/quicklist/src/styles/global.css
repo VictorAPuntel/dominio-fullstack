@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color-primary: #f4f5fb;
+  --bg-color-secondary: #fff;
+  --brand-color: #ca3884;
+  --brand-hover-color: #a52c6b;
+  --danger-color: #c93847;
+  --primary-content: #080b12;
+  --secondary-content: #374151;
+  --tertiary-content: #9ca3af;
+  --always-white: #ffffff;
+  --border-primary: #d1d5d8;
+  --border-hover: #b9c2d0;
+  --ff-sans: 'Inter', system-ui, sans-serif;
+  --fw-md: 500;
+  --fw-sm: 600;
+  --fw-bold: 800;
+  --fs-title: 1.5rem;
+  --fs-label: 1rem;
+  --fs-paragraph: 1rem;
+  --fs-link: 0.875rem;
+  --fs-base: 1rem;
+}
+
+html {
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-md);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--primary-content);
+}
+
+body {
+  background-color: var(--bg-color-primary);
+  & main {
+    margin: 3.875rem 23.125rem 13.5625rem 22.8125rem;
+  }
+}

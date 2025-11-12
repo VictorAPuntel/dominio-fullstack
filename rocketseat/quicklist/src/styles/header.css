@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  justify-content: center;
+  margin: 1.5625rem 37.8431rem 0 37.8125rem;
+}
+
+h1 {
+  font-size: var(--fs-title);
+  font-weight: var(--fw-bold);
+  color: var(--secondary-content);
+  & > img {
+    margin-right: 0.4375rem;
+  }
+}
