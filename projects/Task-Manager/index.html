@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>Task Manager</h1>
+        <p>Organize your tasks, filter by status and track your progress.</p>
+      </header>
+
+      <section class="card">
+        <!-- Add task -->
+        <form id="task-form" class="task-form">
+          <div class="field">
+            <label for="task-title">New task</label>
+            <div class="field-inline">
+              <input
+                type="text"
+                id="task-title"
+                placeholder="Type a task and press Add..."
+                autocomplete="off"
+              />
+              <button type="submit" class="btn primary">Add</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Filters -->
+        <section class="filters">
+          <span>Filter:</span>
+          <div class="filter-buttons">
+            <button class="btn filter-btn active" data-filter="all">All</button>
+            <button class="btn filter-btn" data-filter="active">Active</button>
+            <button class="btn filter-btn" data-filter="completed">
+              Completed
+            </button>
+          </div>
+        </section>
+
+        <!-- Counters -->
+        <section class="counters">
+          <p><strong>Total:</strong> <span id="count-total">0</span></p>
+          <p><strong>Active:</strong> <span id="count-active">0</span></p>
+          <p><strong>Completed:</strong> <span id="count-completed">0</span></p>
+        </section>
+
+        <!-- Task list -->
+        <section class="task-list-wrapper">
+          <ul id="task-list" class="task-list">
+            <!-- Tasks will be rendered here by JS -->
+          </ul>
+          <button id="clear-completed" class="btn ghost">
+            Clear completed
+          </button>
+        </section>
+      </section>
+    </main>
+
+    <script src="src/scripts/main.js"></script>
+  </body>
+</html>
