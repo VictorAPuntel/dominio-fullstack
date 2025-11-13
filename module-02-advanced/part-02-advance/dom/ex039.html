@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex039 - Toggle Card</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: system-ui, sans-serif;
+      }
+
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .card {
+        background: #1e293b;
+        padding: 24px;
+        border-radius: 12px;
+        width: 360px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      h1 {
+        font-size: 22px;
+        margin-bottom: 6px;
+      }
+
+      p.subtitle {
+        font-size: 14px;
+        color: #94a3b8;
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        background: #6366f1;
+        color: white;
+        padding: 10px 14px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.2s;
+      }
+
+      .btn:hover {
+        background: #4f46e5;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      #extra-text {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="card">
+      <h1>Toggle Info</h1>
+
+      <p class="subtitle">
+        Click the button to show or hide the extra information.
+      </p>
+
+      <button id="toggle-btn" class="btn">Show more</button>
+
+      <p id="extra-text" class="hidden">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
+        Donec at efficitur urna.
+      </p>
+    </section>
+
+    <script>
+      // DOM elements
+      const toggleBtn = document.querySelector('#toggle-btn')
+      const extraText = document.querySelector('#extra-text')
+
+      // State
+      let isVisible = false
+
+      function handleToggle() {
+        isVisible = !isVisible
+
+        if (!isVisible) {
+          extraText.classList.add('hidden')
+          toggleBtn.textContent = 'Show More'
+        } else {
+          toggleBtn.textContent = 'Show Less'
+          extraText.classList.remove('hidden')
+        }
+      }
+
+      // Event listener
+      toggleBtn.addEventListener('click', handleToggle)
+    </script>
+  </body>
+</html>
