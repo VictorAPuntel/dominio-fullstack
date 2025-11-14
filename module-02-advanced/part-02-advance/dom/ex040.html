@@ -1,0 +1,200 @@
+<!-- 
+ex040 - Dynamic List (Skeleton)
+Goal: Create a dynamic list where the user can:
+  - Add items
+  - Remove items
+  - Optional: mark items as done
+  - Optional: counters
+But ALL logic must be implemented by you.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex040 - Dynamic List</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: system-ui, sans-serif;
+      }
+
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: #1e293b;
+        padding: 28px;
+        border-radius: 12px;
+        width: 400px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      h1 {
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+
+      .field {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      input {
+        flex: 1;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+
+      .btn {
+        background: #6366f1;
+        border: none;
+        padding: 10px 14px;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        color: white;
+        transition: 0.2s;
+      }
+
+      .btn:hover {
+        background: #4f46e5;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      li {
+        background: #0f172a;
+        padding: 12px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .remove-btn {
+        background: #ef4444;
+        padding: 6px 10px;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        font-size: 13px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .remove-btn:hover {
+        background: #dc2626;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Dynamic List</h1>
+
+      <div class="field">
+        <input
+          type="text"
+          id="item-input"
+          placeholder="Type something..."
+          autocomplete="off"
+        />
+        <button id="add-btn" class="btn">Add</button>
+      </div>
+
+      <ul id="item-list"></ul>
+    </div>
+
+    <script>
+      // DOM elements
+      const itemInput = document.querySelector('#item-input')
+      const addBtn = document.querySelector('#add-btn')
+      const itemList = document.querySelector('#item-list')
+      const stats = document.querySelector('#stats')
+      const clearBtn = document.querySelector('#clear-btn')
+
+      function updateStats() {
+        const total = itemList.children.length
+        const done = itemList.querySelectorAll('li.done').length
+
+        stats.textContent = `${total} imte${
+          total !== 1 ? 's' : ''
+        } - ${done} done`
+      }
+
+      function handleAddItem() {
+        const value = itemInput.value.trim()
+        if (value === '') {
+          itemInput.focus()
+          return
+        }
+
+        const li = document.createElement('li')
+        const span = document.createElement('span')
+        span.textContent = value
+
+        span.addEventListener('click', () => {
+          li.classList.toggle('done')
+          updateStats()
+        })
+
+        const remove = document.createElement('button')
+        remove.textContent = 'Remove'
+        remove.classList.add('remove-btn')
+
+        remove.addEventListener('click', () => {
+          itemList.removeChild(li)
+          updateStats()
+          itemInput.focus()
+        })
+
+        li.appendChild(span)
+        li.appendChild(remove)
+
+        itemList.appendChild(li)
+
+        itemInput.value = ''
+        itemInput.focus()
+
+        updateStats()
+      }
+
+      addBtn.addEventListener('click', handleAddItem)
+
+      itemInput.addEventListener('keydown', (event) => {
+        if (event.key == 'Enter') {
+          handleAddItem()
+        }
+      })
+
+      clearBtn.addEventListener('click', () => {
+        itemList.innerHTML = ''
+        updateStats()
+        itemInput.focus()
+      })
+
+      updateStats()
+    </script>
+  </body>
+</html>
