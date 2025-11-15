@@ -1,0 +1,167 @@
+<!-- 
+ex042 - Create & Remove Boxes
+Goal: Create and remove colorful boxes dynamically on the page
+
+Input:
+  - Click on "Add Box" button
+  - Click on "Remove Last Box" button
+
+Process:
+  1) Get the "Add" and "Remove" buttons
+  2) Get the container that will hold the boxes
+  3) When "Add" is clicked:
+      - Create a new <div>
+      - Add the "box" class to it
+      - Set a random background color
+      - Append it to the container
+  4) When "Remove" is clicked:
+      - Remove the last box inside the container (if it exists)
+
+Output:
+  - New colorful boxes appear when clicking "Add"
+  - The last box disappears when clicking "Remove"
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex042 - Create & Remove Boxes</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #020617;
+        color: #e2e8f0;
+        padding: 20px;
+      }
+
+      .card {
+        background: #0f172a;
+        border-radius: 12px;
+        padding: 24px;
+        max-width: 640px;
+        width: 100%;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+      }
+
+      h1 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        color: #94a3b8;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      button {
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 500;
+        background: #1e293b;
+        color: #e2e8f0;
+        transition: transform 0.15s ease, box-shadow 0.15s ease,
+          background 0.15s ease;
+      }
+
+      button:hover {
+        background: #334155;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.9);
+        transform: translateY(-1px);
+      }
+
+      button:active {
+        transform: translateY(0);
+        box-shadow: none;
+      }
+
+      #boxes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        min-height: 100px;
+        border-radius: 10px;
+        background: #020617;
+        border: 1px dashed #1e293b;
+      }
+
+      .box {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        box-shadow: 0 6px 14px rgba(15, 23, 42, 0.8);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .box:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 12px 24px rgba(15, 23, 42, 0.9);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Create & Remove Boxes</h1>
+      <p>Click the buttons to add colorful boxes or remove the last one.</p>
+
+      <div class="actions">
+        <button id="add">Add Box</button>
+        <button id="remove">Remove Last Box</button>
+      </div>
+
+      <div id="boxes"></div>
+    </div>
+
+    <script>
+      const add = document.getElementById('add')
+      const remove = document.getElementById('remove')
+      const boxesContainer = document.getElementById('boxes')
+
+      function randomColor() {
+        const r = Math.floor(Math.random() * 256)
+        const g = Math.floor(Math.random() * 256)
+        const b = Math.floor(Math.random() * 256)
+        return `rgb(${r}, ${g}, ${b})`
+      }
+
+      add.addEventListener('click', () => {
+        const newBox = document.createElement('div')
+        newBox.classList.add('box')
+        newBox.style.backgroundColor = randomColor()
+        boxesContainer.appendChild(newBox)
+      })
+
+      remove.addEventListener('click', () => {
+        const lastBox = boxesContainer.lastElementChild
+
+        if (lastBox) {
+          lastBox.remove()
+        }
+      })
+    </script>
+  </body>
+</html>
