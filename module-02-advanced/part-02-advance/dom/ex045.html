@@ -1,0 +1,93 @@
+<!-- 
+ex045 - Filter List Items
+Goal: Filter list items in real-time as the user types in the input
+
+Input:
+  - Text typed in the search input
+
+Process:
+  1) Get the input
+  2) Get all <li> items
+  3) Listen to "input" event
+  4) On each input:
+      - Get the typed text
+      - Compare with each <li> text
+      - Show only items that match (hide others)
+
+Output:
+  - List updates in real-time showing only items that contain the typed text
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex045 - Filter Items</title>
+
+    <style>
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        padding: 40px;
+      }
+
+      input {
+        padding: 10px;
+        border-radius: 6px;
+        border: none;
+        margin-bottom: 20px;
+        width: 240px;
+      }
+
+      ul {
+        list-style: disc;
+        padding-left: 20px;
+      }
+
+      li {
+        padding: 4px 0;
+      }
+
+      li.hide {
+        opacity: 0;
+        transform: translateX(-12px);
+        height: 0;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Filter Items</h1>
+
+    <input id="search" placeholder="Type to filter..." />
+
+    <ul id="list">
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Orange</li>
+      <li>Grape</li>
+      <li>Watermelon</li>
+    </ul>
+
+    <script>
+      const searchInput = document.getElementById('search')
+      const list = document.querySelectorAll('#list > li')
+
+      searchInput.addEventListener('input', () => {
+        const text = searchInput.value.toLowerCase().trim()
+
+        list.forEach((li) => {
+          const name = li.textContent.toLowerCase()
+          if (name.includes(text)) {
+            li.classList.remove('hide')
+          } else {
+            li.classList.add('hide')
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
