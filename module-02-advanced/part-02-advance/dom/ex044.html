@@ -1,0 +1,69 @@
+<!-- 
+ex044 - Add List Items Dynamically
+Goal: Add new <li> items to the list every time the button is clicked
+
+Input:
+  - Click on the "Add Item" button
+
+Process:
+  1) Get the button
+  2) Get the <ul>
+  3) When clicked:
+      - Create a new <li>
+      - Set the text: "Item X" (X = number of the item)
+      - Append it to the list
+
+Output:
+  - A new "Item X" appears in the list with each click
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex0XX - Add Items</title>
+
+    <style>
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        padding: 40px;
+      }
+
+      button {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        background: #4f46e5;
+        color: #fff;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style: disc;
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Add Items</h1>
+
+    <button id="add-btn">Add Item</button>
+
+    <ul id="list"></ul>
+
+    <script>
+      const button = document.getElementById('add-btn')
+      const list = document.getElementById('list')
+      let itemNumber = 1
+      button.addEventListener('click', () => {
+        const li = document.createElement('li')
+        li.textContent = `Item ${itemNumber}`
+        list.appendChild(li)
+        itemNumber++
+      })
+    </script>
+  </body>
+</html>
