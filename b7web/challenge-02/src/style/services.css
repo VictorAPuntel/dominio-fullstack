@@ -1,0 +1,27 @@
+.services {
+  & .service-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    & .service-item {
+      flex: 1;
+      background-color: var(--main-bg-light);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
+      & .service-icon {
+        margin-bottom: 10px;
+        font-size: 5rem;
+      }
+    }
+  }
+  @media (width > 700px) {
+    .service-area {
+      flex-direction: row;
+    }
+  }
+}

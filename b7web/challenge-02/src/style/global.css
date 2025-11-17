@@ -1,0 +1,46 @@
+:root {
+  --main-bg-color: #f0f0f0;
+  --main-bg-light: #fff;
+  --main-text-color: #333;
+  --main-text-light: #ccc;
+  --primary-color: #007bff;
+  --secondary-color: #003670;
+  --light-color: #fff;
+  --font-family: Arial, sans-serif;
+  --header-height: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: var(--font-family);
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.about,
+.services,
+.portfolio,
+.contact {
+  text-align: center;
+  padding: 40px 20px;
+}

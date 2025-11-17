@@ -1,0 +1,23 @@
+.portfolio {
+  & .grid {
+    display: grid;
+    grid-template-columns: 1gr;
+    gap: 20px;
+
+    & .grid-item {
+      & img {
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.3 ease;
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  @media (width > 700px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

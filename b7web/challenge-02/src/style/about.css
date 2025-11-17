@@ -1,0 +1,14 @@
+.about {
+  border-bottom: 1px solid var(--main-text-light);
+  & img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  & p {
+    margin: 10px auto;
+    max-width: 600px;
+  }
+}

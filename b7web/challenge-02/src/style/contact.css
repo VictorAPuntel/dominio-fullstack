@@ -1,0 +1,35 @@
+.contact {
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+
+    & label {
+      text-align: left;
+    }
+
+    & input,
+    textarea {
+      padding: 10px;
+      border: 1px solid var(--main-text-light);
+      color: var(--main-text-color);
+      border-radius: 8px;
+    }
+
+    & button {
+      background-color: var(--secondary-color);
+      color: var(--light-color);
+      border: 0;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: var(--main-text-color);
+        transform: scale(1.05);
+      }
+    }
+  }
+}
