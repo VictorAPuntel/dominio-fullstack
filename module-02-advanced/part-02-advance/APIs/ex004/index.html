@@ -1,0 +1,74 @@
+<!-- 
+ex047 - Fetch Random User
+Goal: Fetch a random user from an API and display the data on the screen
+
+Input:
+  - Click on "Load User" button
+
+Process:
+  1) Get the button and UI elements
+  2) On click:
+      - Show "Loading..."
+      - Fetch user from: https://randomuser.me/api/
+      - Convert response to JSON
+      - Extract:
+          - name
+          - email
+          - picture
+      - Update UI with the data
+
+Output:
+  - A card appears showing the user's photo, name, and email
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex047 - Random User</title>
+
+    <style>
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        padding: 40px;
+      }
+
+      button {
+        padding: 10px 16px;
+        background: #4f46e5;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 24px;
+      }
+
+      .card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 10px;
+        width: 260px;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 12px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Random User</h1>
+
+    <button id="btn">Load User</button>
+
+    <div id="card" class="card">
+      <!-- Fill with JS -->
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
