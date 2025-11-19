@@ -1,0 +1,67 @@
+<!-- 
+ex005 - Fetch Posts List
+Goal: Fetch a list of posts from an API and display them on the screen
+
+Input:
+  - Click on the "Load Posts" button
+
+Process:
+  1) Get the button and the <ul> element
+  2) On click:
+      - Show "Loading..."
+      - Fetch posts from: https://jsonplaceholder.typicode.com/posts
+      - Convert response to JSON
+      - For each post:
+          - Create <li>
+          - Add title inside the <li>
+          - Append each <li> to the list
+
+Output:
+  - A list of post titles appears on the screen
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex005 - Posts List</title>
+
+    <style>
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        padding: 40px;
+      }
+
+      button {
+        padding: 10px 16px;
+        background: #4f46e5;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 24px;
+      }
+
+      ul {
+        list-style: disc;
+        padding-left: 20px;
+      }
+
+      li {
+        padding: 6px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Posts List</h1>
+
+    <button id="btn">Load Posts</button>
+
+    <ul id="list"></ul>
+
+    <script src="script.js"></script>
+  </body>
+</html>
