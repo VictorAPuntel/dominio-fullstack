@@ -1,0 +1,76 @@
+<!-- 
+ex008 - Random Advice (API)
+Goal:
+  - Fetch a random advice from an API and display it on the page
+
+Input:
+  - Click on "Get Advice" button
+
+Process:
+  1) Listen to button click
+  2) Show "Loading..." message
+  3) Fetch data from https://api.adviceslip.com/advice
+  4) Extract the advice text from the JSON
+  5) Display the advice on the page
+  6) Handle errors and show an error message if needed
+
+Output:
+  - A random advice text shown on the screen
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex008 - Random Advice (API)</title>
+
+    <style>
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      }
+
+      button {
+        padding: 10px 18px;
+        border-radius: 6px;
+        border: none;
+        background: #38bdf8;
+        color: #0f172a;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      #adviceBox {
+        max-width: 420px;
+        text-align: center;
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+        font-size: 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Random Advice</h1>
+
+    <button id="btn">Get Advice</button>
+
+    <div id="adviceBox">Click the button to get a random advice 💡</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
