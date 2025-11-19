@@ -1,0 +1,68 @@
+<!-- 
+ex007 - Dog Gallery (3 images)
+Goal: Load 3 random dog images every time the button is clicked
+
+Input:
+  - Click on the "Load Dogs" button
+
+Process:
+  1) Get the button and gallery container
+  2) On click:
+      - Show "Loading..."
+      - Clear gallery
+      - Fetch 3 images (3 requests or 1 request with 3 images)
+      - Create <img> for each image
+      - Append to gallery
+
+Output:
+  - A mini gallery of 3 images appears each time
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex007 - Dog Gallery</title>
+
+    <style>
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        padding: 40px;
+      }
+
+      button {
+        padding: 10px 16px;
+        background: #4f46e5;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 24px;
+      }
+
+      .gallery {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .gallery img {
+        width: 240px;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dog Gallery</h1>
+
+    <button id="btn">Load Dogs</button>
+
+    <div class="gallery" id="gallery">
+      <!-- JS inserts images here -->
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
