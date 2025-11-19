@@ -1,0 +1,134 @@
+<!-- 
+ex009 - Random User Card (API)
+Goal:
+  - Fetch a random user from an API and display profile info
+
+Input:
+  - Click on "Load Profile" button
+
+Process:
+  1) Listen to button click
+  2) Show "Loading..." state
+  3) Fetch data from https://randomuser.me/api/
+  4) Extract:
+      - Picture
+      - Full name
+      - Email
+      - Country
+  5) Update the card with this information
+  6) Handle errors and show an error message
+
+Output:
+  - A profile card with random user info
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex009 - Random User Card (API)</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      button {
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: none;
+        background: #38bdf8;
+        color: #0f172a;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+      }
+
+      button:hover:not(:disabled) {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 20px rgba(56, 189, 248, 0.35);
+      }
+
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        box-shadow: none;
+        transform: none;
+      }
+
+      .card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 16px;
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      .avatar {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #38bdf8;
+      }
+
+      .name {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .email {
+        font-size: 14px;
+        color: #cbd5f5;
+      }
+
+      .country {
+        font-size: 14px;
+        color: #a5b4fc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Random User</h1>
+
+    <button id="btn">Load Profile</button>
+
+    <div class="card">
+      <img
+        id="avatar"
+        class="avatar"
+        src="https://via.placeholder.com/96"
+        alt="User avatar"
+      />
+      <div id="name" class="name">Click the button to load a user</div>
+      <div id="email" class="email"></div>
+      <div id="country" class="country"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
