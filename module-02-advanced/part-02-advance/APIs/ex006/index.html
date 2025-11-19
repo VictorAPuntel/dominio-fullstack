@@ -1,0 +1,68 @@
+<!-- 
+ex006 - Dog Image Loader
+Goal: Fetch a random dog image and display it on the screen
+
+Input:
+  - Click on the "Load Dog" button
+
+Process:
+  1) Get the button and image container
+  2) On click:
+      - Show loading message
+      - Fetch image from: https://dog.ceo/api/breeds/image/random
+      - Convert response to JSON
+      - Extract the image URL (data.message)
+      - Create <img> element with the URL
+      - Replace previous content
+
+Output:
+  - A new dog image appears on every click
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex006 - Dog Image Loader</title>
+
+    <style>
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        padding: 40px;
+      }
+
+      button {
+        padding: 10px 16px;
+        background: #4f46e5;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 24px;
+      }
+
+      .image-area img {
+        width: 360px;
+        border-radius: 12px;
+        margin-top: 20px;
+      }
+
+      .image-area {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Random Dog</h1>
+
+    <button id="btn">Load Dog</button>
+
+    <div class="image-area" id="image-area">
+      <!-- JS will insert image here -->
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
