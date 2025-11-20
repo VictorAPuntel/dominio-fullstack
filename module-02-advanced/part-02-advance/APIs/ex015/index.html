@@ -1,0 +1,63 @@
+<!-- 
+ex015 - Exchange Rate Viewer
+Goal: Fetch and display USD → BRL exchange rate
+
+Input:
+  - Click on "Load Exchange Rate"
+
+Process:
+  1) Show loading
+  2) Fetch USD to BRL rate
+  3) Extract rate and date
+  4) Display in a card
+  5) Handle errors
+
+Output:
+  - Shows the exchange rate and last update date
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex015 - Exchange Rate Viewer</title>
+
+    <style>
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      button {
+        background: #3b82f6;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+      }
+
+      .card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 10px;
+        width: 320px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Load Exchange Rate</button>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
