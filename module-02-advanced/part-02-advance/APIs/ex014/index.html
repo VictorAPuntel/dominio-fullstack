@@ -1,0 +1,66 @@
+<!-- 
+ex014 - Cat Facts List
+Goal: Load multiple cat facts and display them in a list
+
+Input:
+  - Click on "Load Facts"
+
+Process:
+  1) Show loading text
+  2) Fetch list of facts from API
+  3) Extract array of facts
+  4) Create <li> for each fact
+  5) Handle errors
+
+Output:
+  - Unordered list with cat facts
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex014 - Cat Facts</title>
+
+    <style>
+      body {
+        background: #020617;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 16px;
+        gap: 20px;
+      }
+
+      button {
+        background: #ec4899;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 999px;
+        color: white;
+        cursor: pointer;
+      }
+
+      ul {
+        padding-left: 20px;
+        max-width: 600px;
+        list-style-type: none;
+      }
+
+      li {
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="load-btn">Load Facts</button>
+
+    <div id="facts-container"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
