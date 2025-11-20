@@ -1,0 +1,71 @@
+<!-- 
+ex012 - Random Quote Generator
+Goal: Fetch a random quote and display it
+
+Input:
+  - Click on "Get Quote"
+
+Process:
+  1) Show loading
+  2) Fetch quote from API
+  3) Extract content and author
+  4) Display them in a card
+  5) Handle errors
+
+Output:
+  - A random quote + author
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex012 - Random Quote</title>
+
+    <style>
+      body {
+        background: #020617;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      button {
+        background: #6366f1;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      .card {
+        background: #0f172a;
+        padding: 24px;
+        border-radius: 10px;
+        width: 420px;
+        max-width: 90vw;
+      }
+
+      .author {
+        margin-top: 12px;
+        font-size: 14px;
+        opacity: 0.8;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Get Quote</button>
+
+    <div id="quote"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
