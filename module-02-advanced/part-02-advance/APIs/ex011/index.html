@@ -1,0 +1,67 @@
+<!-- 
+ex011 - Random Joke Generator
+Goal: Fetch a random joke from an API
+
+Input:
+  - Click on "Get Joke"
+
+Process:
+  1) Show loading
+  2) Fetch joke from API
+  3) Extract joke text
+  4) Display it on screen
+  5) Handle errors
+
+Output:
+  - Display a random joke in a card
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex011 - Random Joke</title>
+
+    <style>
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        min-height: 100vh;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      button {
+        background: #3b82f6;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .card {
+        background: #1e293b;
+        padding: 20px;
+        width: 380px;
+        border-radius: 10px;
+        font-size: 18px;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="btn">Get Joke</button>
+
+    <div id="joke"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
