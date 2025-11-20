@@ -1,0 +1,105 @@
+<!-- 
+ex013 - Pokémon Info Viewer
+Goal: Fetch Pokémon data by name and show basic info
+
+Input:
+  - Pokémon name typed in input
+  - Click on "Search"
+
+Process:
+  1) Read input value
+  2) Validate (ignore empty)
+  3) Show loading
+  4) Fetch from API (pokemon/{name})
+  5) Extract name, image, types, weight, height
+  6) Display data in a card
+  7) Handle not found / errors
+
+Output:
+  - Card with Pokémon info
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ex013 - Pokémon Info</title>
+
+    <style>
+      body {
+        background: #020617;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 16px;
+        gap: 16px;
+      }
+
+      .controls {
+        display: flex;
+        gap: 8px;
+      }
+
+      input {
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        min-width: 200px;
+      }
+
+      button {
+        background: #22c55e;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+      }
+
+      .card {
+        margin-top: 16px;
+        background: #0f172a;
+        border-radius: 12px;
+        padding: 20px;
+        width: 320px;
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .card img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .types {
+        margin-top: 8px;
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <input
+        id="pokemon-input"
+        type="text"
+        placeholder="Type a Pokémon name (e.g. pikachu)"
+      />
+      <button id="search-btn">Search</button>
+    </div>
+
+    <div id="pokemon-card"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
